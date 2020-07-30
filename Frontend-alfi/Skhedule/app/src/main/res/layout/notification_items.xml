@@ -1,0 +1,75 @@
+<android.support.v7.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    card_view:cardUseCompatPadding="true"
+    card_view:cardCornerRadius="8dp"
+    android:layout_margin="2dp"
+    >
+
+    <!--   Recycler View Item Row   -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        android:layout_height="fill_parent">
+
+
+        <TextView
+            android:id="@+id/etitle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#ffffff"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:gravity="center"
+            android:background="#64b5f6"/>
+
+
+        <TextView
+            android:id="@+id/eloctn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#ffffff"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:gravity="center"
+            android:background="#64b5f6"/>
+
+        <TextView
+            android:id="@+id/edate"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#ffffff"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:gravity="center"
+            android:background="#64b5f6"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="right"
+        android:layout_marginTop="25dp"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accept"
+            android:id="@+id/accept"
+            android:theme="@style/AppTheme.Button"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reject"
+            android:id="@+id/reject"
+            android:theme="@style/AppTheme1.Button"/>
+    </LinearLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

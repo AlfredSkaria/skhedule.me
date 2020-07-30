@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.alfred.karela.schedule"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [onesignal_app_id: "a0715be4-47f1-4e9c-8289-41d5a49845fb",
+                                // Project number pulled from dashboard, local value is ignored.
+                                onesignal_google_project_number: "670476386562"]
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.android.support:design:25.1.1'
+    compile 'com.android.support:support-v4:25.1.1'
+    compile 'com.android.support:cardview-v7:25.1.1'
+    compile 'com.android.support:recyclerview-v7:25.1.1'
+    compile 'com.getbase:floatingactionbutton:1.10.0'
+    compile 'com.jakewharton:butterknife:6.1.0'
+    compile 'com.github.vipulasri:timelineview:1.0.3'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.github.sundeepk:compact-calendar-view:1.9.9'
+    compile 'com.borax12.materialdaterangepicker:library:1.9'
+    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    compile 'com.android.volley:volley:1.0.0'
+
+    compile 'com.google.android.gms:play-services-auth:10.0.1'
+    apply plugin: 'com.google.gms.google-services'
+
+    compile 'com.onesignal:OneSignal:3.+@aar'
+
+    // Required for OneSignal, even if you have added FCM.
+    compile 'com.google.android.gms:play-services-gcm:10.0.1'
+
+    // Required for geotagging
+    compile "com.google.android.gms:play-services-location:10.0.1"
+    // play-services-analytics is only needed when using 8.1.0 or older.
+    // compile 'com.google.android.gms:play-services-analytics:+'
+
+
+
+    compile 'com.github.tibolte:agendacalendarview:1.0.4'
+    compile 'com.hanks.animatecheckbox:library:0.1'
+    compile 'com.github.tibolte:agendacalendarview:1.0.4'
+    testCompile 'junit:junit:4.12'
+}

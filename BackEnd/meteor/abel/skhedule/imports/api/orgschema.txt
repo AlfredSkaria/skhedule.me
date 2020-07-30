@@ -1,0 +1,112 @@
+
+
+let Schema = {}
+
+
+Schema.Remainder : new SimpleSchema({
+  "name":{
+    type: String
+  },
+  "description":{
+    type:String
+  },
+  "start-date":{
+    type:Date
+  },
+  "end-date":{
+    type:Date
+  },
+  "location":{
+    type:Array,
+    optional:true
+  },
+  "location.$":{
+    type:Object
+  },
+  "location.$.name":{
+    type:String
+  },
+  "location.$.longlat":{
+    type:String,
+    optional:true
+  },
+  "owner":{
+    type:ObjectId
+  }
+});
+
+Schema.Private = new SimpleSchema ({
+  "name":{
+    type: String
+  },
+  "description":{
+    type:String
+  },
+  "start-date":{
+    type:Date
+  },
+  "end-date":{
+    type:Date
+  },
+  "location":{
+    type:Array,
+    optional:true
+  },
+  "location.$":{
+    type:Object
+  },
+  "location.$.name":{
+    type:String
+  },
+  "location.$.longlat":{
+    type:String,
+    optional:true
+  },
+  "owner":{
+    type:ObjectId
+  },
+  "invite-list":{
+    type:Array
+  },
+  "invite-list.$":{
+    type:Object
+  },
+  "invite-list.$.mail":{
+    type:String,
+    optional:true
+  },
+  "invite-list.$.phone":{
+    type:Number,
+    optional:true
+  },
+  "invite-list.$.userId":{
+    type:ObjectId,
+    optional:true
+  },
+  "invite-list.$.response":{
+    type:Number,
+    allowedValues:[1,2],
+    label:"1-Accept,2-reject"
+  },
+  "guest-list":{
+    type:Array
+    optional:true
+  },
+  "guest-list.$":{
+    type:Object
+  },
+  "guest-list.$.userId":{
+    type:userId,
+    optional:true
+  },
+  "guest-list.$.mail":{
+    type:String,
+    optional:true
+  },
+  "guest-list.$.phone":{
+    type:Number,
+    optional:true
+  }
+});
+
+export default Schema

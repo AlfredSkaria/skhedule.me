@@ -1,0 +1,153 @@
+package com.alfred.karela.schedule;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.alfred.karela.schedule.recyclerview.CustomAdapter;
+import com.alfred.karela.schedule.recyclerview.DataModel;
+import com.alfred.karela.schedule.recyclerview.MyData;
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Created by SONU on 25/09/15.
+ */
+public class RecyclerView_Activity extends Fragment {
+    private static RecyclerView recyclerView;
+    private static RecyclerView recyclerView1;
+    private static RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
+    private static ArrayList<DataModel> data;
+    public static View.OnClickListener myOnClickListener;
+    private static ArrayList<Integer> removedItems;
+
+    public RecyclerView_Activity(){
+
+    }
+
+    private static String navigateFrom;//String to get Intent Value
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.content_timeline, container, false);
+
+
+        recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+
+        recyclerView1 = (RecyclerView) rootView.findViewById(R.id.recyclerView1);
+        recyclerView1.setHasFixedSize(true);
+
+/*
+       layoutManager = new LinearLayoutManager(getActivity());
+*/
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        recyclerView1.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+        recyclerView1.setItemAnimator(new DefaultItemAnimator());
+
+        getdata();
+        /*
+        data = new ArrayList<DataModel>();
+        for (int i = 0; i < MyData.nameArray.length; i++) {
+            data.add(new DataModel(
+                    MyData.nameArray[i],
+                    MyData.versionArray[i],
+                    MyData.id_[i],
+                    MyData.drawableArray[i]
+            ));
+        }
+
+        removedItems = new ArrayList<Integer>();
+        adapter = new CustomAdapter(data);
+        recyclerView.setAdapter(adapter);
+        recyclerView1.setAdapter(adapter);
+        */
+        return rootView;
+    }
+    public void getdata(){
+
+
+         ArrayList<String> pevents = new ArrayList<String>();
+
+        JsonArrayRequest request1 = new JsonArrayRequest(Request.Method.GET, "http://skhedule.tk/api/event/public/list", null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        JSONObject obj;
+                        String[] names= new String[response.length()];
+                        for(int i=0;i<response.length();i++){
+                            try {
+                                obj = (JSONObject) response.getJSONObject(i);
+                                names[i] = obj.getString("name");
+                                Log.d("NAme",names[i]);
+                            }
+                            catch(Exception e){
+
+                            }
+
+                        }
+                        setAdapters(names);
+
+                    }
+                },
+                new Response.ErrorListener(){
+                    @Override
+                    public void onErrorResponse(VolleyError error){
+
+                    }
+                }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                //headers.put("Content-Type", "application/json; charset=utf-8");
+                headers.put("User-agent", System.getProperty("http.agent"));
+                return headers;
+            }
+        };
+    }
+    public void setAdapters(String[] names){
+
+
+        data = new ArrayList<DataModel>();
+
+        for (int i = 0; i < names.length; i++) {
+            data.add(new DataModel(
+                    names[i],
+                    MyData.versionArray[i],
+                    MyData.id_[i],
+                    MyData.drawableArray[i]
+            ));
+        }
+
+        removedItems = new ArrayList<Integer>();
+        adapter = new CustomAdapter(data);
+        recyclerView.setAdapter(adapter);
+        recyclerView1.setAdapter(adapter);
+    }
+}

@@ -1,0 +1,12 @@
+
+Google OuAuth
+Client Id : 670476386562-c2csafsll5v1oom8khkqusdsp4nba12n.apps.googleusercontent.com
+client Secret : FpKW_1u075267k25V6PZ_i9M
+
+SMTP
+Server	smtp.sendgrid.net
+Ports	
+25, 587	(for unencrypted/TLS connections)
+465	(for SSL connections)
+Username	apikey
+Password	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

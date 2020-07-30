@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CompactCalendarView-master/CompactCalendarView-master.iml" filepath="$PROJECT_DIR$/CompactCalendarView-master/CompactCalendarView-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MaterialDateRangePicker-master/MaterialDateRangePicker-master.iml" filepath="$PROJECT_DIR$/MaterialDateRangePicker-master/MaterialDateRangePicker-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Schedule.iml" filepath="$PROJECT_DIR$/Schedule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Skhedule.iml" filepath="$PROJECT_DIR$/Skhedule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+    </modules>
+  </component>
+</project>

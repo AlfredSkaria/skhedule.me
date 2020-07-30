@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "670476386562",
+    "project_id": "skhedule-test"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670476386562:android:04e7ff20fafcc7d8",
+        "android_client_info": {
+          "package_name": "com.alfred.karela.schedule"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "670476386562-l80b644of5nhkvhhe0emn2dogn52k6ee.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alfred.karela.schedule",
+            "certificate_hash": "742c1426af50251307db1d1ca619286876674bd1"
+          }
+        },
+        {
+          "client_id": "670476386562-c2csafsll5v1oom8khkqusdsp4nba12n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuEP8UwDy-LG57HHFjyV5GccJ9WMD--34"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

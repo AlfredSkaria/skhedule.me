@@ -1,0 +1,160 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:id="@+id/main_content"
+    >
+
+    <TextView
+        android:text="Text here"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/textView"
+        android:background="#2196f3"
+        android:gravity="center"
+        android:textSize="23dp"
+        android:textColor="@color/white"
+        />
+
+    <com.github.sundeepk.compactcalendarview.CompactCalendarView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/compactcalendar_view"
+        android:layout_width="fill_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="40dp"
+        app:compactCalendarTargetHeight="250dp"
+        app:compactCalendarTextSize="12sp"
+        app:compactCalendarBackgroundColor="#2196f3"
+        app:compactCalendarTextColor="#fff"
+        app:compactCalendarCurrentSelectedDayBackgroundColor="#0277bd"
+        app:compactCalendarCurrentDayBackgroundColor="#01579b"
+        app:compactCalendarCurrentDayIndicatorStyle="fill_large_indicator"
+        app:compactCalendarEventIndicatorStyle="small_indicator"
+        app:compactCalendarOtherMonthDaysTextColor="#534c4c"
+        app:compactCalendarShouldSelectFirstDayOfMonthOnScroll="true"
+
+        />
+
+   <!-- <Button
+        android:layout_below="@+id/compactcalendar_view"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/prev_button"
+        android:text="Previous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>-->
+
+
+<!--
+    <Button
+        android:layout_below="@+id/compactcalendar_view"
+        android:layout_alignParentRight="true"
+        android:id="@+id/next_button"
+        android:text="Next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+-->
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:id="@+id/calendar_control_buttons"
+        android:layout_below="@+id/compactcalendar_view"
+        android:layout_height="wrap_content">
+
+<!--        <Button
+            android:layout_below="@+id/compactcalendar_view"
+            android:text="Remove all events"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/remove_all_events" />-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:id="@+id/calendar_control_buttons_2"
+        android:layout_below="@+id/calendar_control_buttons"
+        android:gravity="right"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:id="@+id/slide_calendar"
+            android:src="@drawable/down"
+            android:text="Slide animation"
+
+            android:layout_weight="0.01" />
+
+<!--        <Button
+            android:id="@+id/show_with_animation_calendar"
+            android:text="Expose animation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />-->
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/bookings_listview"
+        android:layout_below="@+id/calendar_control_buttons_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </ListView>
+
+
+
+
+
+
+
+
+      <!--  <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/calendar_control_buttons_2">
+
+            <com.vipul.hp_hp.timelineview.TimelineView
+                android:id="@+id/time_marker"
+
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:marker_size="25dp"
+                app:line_size="2dp"
+                app:line="@color/colorPrimary" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="100dp"
+                android:layout_margin="30dp"
+                android:layout_gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/image1"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/tx_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Random"
+                    android:layout_marginLeft="100dp"
+                    android:layout_gravity="center_vertical"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>-->
+
+
+</RelativeLayout>

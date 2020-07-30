@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2196f3</color>
+    <color name="colorPrimaryDark">#1e88e5</color>
+    <color name="textColorPrimary">#ffffff</color>
+    <color name="windowBackground">#ffffff</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--calendar  general-->
+    <color name="blue_selected">#1D87E7</color>
+    <color name="theme_primary_dark">#1976D2</color>
+    <color name="theme_primary">#2196F3</color>
+    <color name="theme_light_primary">#BBDEFB</color>
+    <color name="theme_accent">#FFEB3B</color>
+    <color name="theme_text_icons">#FFFFFF</color>
+
+    <color name="orange_dark">#E64A19</color>
+    <color name="blue_dark">#00537F</color>
+    <color name="yellow">#F5A623</color>
+    <color name="black_dark">#263238</color>
+    <color name="green">#4CAF50</color>
+    <color name="red">#f44336</color>
+
+    <!--Fab colors-->
+    <color name="accent_dark">#ff2929</color>
+    <color name="accent">#ff5252</color>
+    <color name="secondary_text">#727272</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_overlay">#F3F3F3</color>
+
+    <color name="indigo">#4B0082</color>
+    <color name="pink">#FF4081</color>
+
+
+</resources>
